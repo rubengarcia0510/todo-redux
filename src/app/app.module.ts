@@ -4,7 +4,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { TodoModule } from './todos/todo.module';
 import { FooterComponent } from './footer/footer.component';
+
 import { StoreModule } from '@ngrx/store';
+import { todoReducer } from './todos/todo.reducer';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,7 @@ import { StoreModule } from '@ngrx/store';
   imports: [
     BrowserModule,
     TodoModule,
-    StoreModule.forRoot({}, {})
+    StoreModule.forRoot({todos:todoReducer})
   ],
   providers: [],
   bootstrap: [AppComponent]

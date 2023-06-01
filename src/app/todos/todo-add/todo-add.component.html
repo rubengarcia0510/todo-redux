@@ -3,5 +3,6 @@
     <input class="new-todo" 
     placeholder="Que quieres hacer?" 
     [formControl]="txtInput"
+    (keyup.enter)="agregar()"
     autofocus>
 </header>

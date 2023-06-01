@@ -20,7 +20,7 @@ import { environment } from 'src/environments/environment';
     BrowserModule,
     TodoModule,
     StoreModule.forRoot({todos:todoReducer}),
-    
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]

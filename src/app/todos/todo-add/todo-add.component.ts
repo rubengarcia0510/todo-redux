@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-todo-add',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodoAddComponent implements OnInit {
 
-  constructor() { }
+  txtInput:FormControl;
+
+  constructor() { 
+    this.txtInput = new FormControl('',Validators.required)
+  }
 
   ngOnInit(): void {
   }

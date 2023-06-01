@@ -7,6 +7,9 @@ import { FooterComponent } from './footer/footer.component';
 
 import { StoreModule } from '@ngrx/store';
 import { todoReducer } from './todos/todo.reducer';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from 'src/environments/environment';
+
 
 @NgModule({
   declarations: [
@@ -16,7 +19,8 @@ import { todoReducer } from './todos/todo.reducer';
   imports: [
     BrowserModule,
     TodoModule,
-    StoreModule.forRoot({todos:todoReducer})
+    StoreModule.forRoot({todos:todoReducer}),
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

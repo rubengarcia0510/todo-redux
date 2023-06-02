@@ -45,6 +45,13 @@ export class TodoItemComponent implements OnInit {
 
   update(){
     this.editando=false;
+    if(this.inputText.invalid) return;
+    if(this.inputText.value === this.todo.texto) return;
+
+    this.store.dispatch(actions.editar({
+      id:this.todo.id,
+      texto:this.inputText.value
+    }))
   }
 
 }

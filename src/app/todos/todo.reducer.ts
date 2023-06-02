@@ -1,5 +1,5 @@
 import { createReducer, on } from '@ngrx/store';
-import { add, toggle } from './todo.actions';
+import { add, editar, toggle } from './todo.actions';
 import { Todo } from './models/todo.model';
 
 
@@ -24,6 +24,25 @@ const _todoReducer = createReducer(
         }
 
       }else{
+        salida=todo;
+      }
+
+      return salida;
+
+    })
+  }),
+  on(editar, (state,{id, texto}) => {
+    return state.map(todo =>{
+      let salida:Todo;
+      console.log(todo.id+" == "+id)
+      if(todo.id === id){
+        
+        salida={
+          ...todo,
+          texto: texto
+        }
+
+      }else{ 
         salida=todo;
       }
 

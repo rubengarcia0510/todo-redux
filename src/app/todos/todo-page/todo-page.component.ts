@@ -20,7 +20,6 @@ export class TodoPageComponent implements OnInit {
 
   toggleAll(){
     this.completado=!this.completado;
-    console.log(this.completado)
 
     this.store.dispatch(actions.toggleAll({completado:this.completado}));
   

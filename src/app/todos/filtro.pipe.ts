@@ -7,7 +7,6 @@ import { Todo } from './models/todo.model';
 export class FiltroPipe implements PipeTransform {
 
   transform(todos: Todo[], filtro:string): Todo[] {
-    console.log(todos)
 
     switch(filtro){
       case 'completados':
